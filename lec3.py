@@ -1,5 +1,6 @@
 import lec1
 import numpy as np
+
 g = lec1.g
 x0=12
 y0 = 5

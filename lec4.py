@@ -1,4 +1,5 @@
 import numpy as np
+
 N=7
 M=3
 ar = np.zeros((N, M+1))
