@@ -1,4 +1,4 @@
-import lec1
+import lec1_phisconst
 import numpy as np
 
 g = lec1.g
