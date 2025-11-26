@@ -22,5 +22,3 @@ for i in range(len(ms)):
 nmsa = np.array(nms)
 print(nmsa)
 
-"""d = '54535353474747'
-print(np.array(list(d), dtype=float))"""
