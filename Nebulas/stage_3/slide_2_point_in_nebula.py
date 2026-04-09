@@ -3,7 +3,7 @@ from scipy import interpolate
 import matplotlib.pyplot as plt
 import shapely.geometry as geom
 
-img = plt.imread("Barnard_68_nebula.jpg")
+img = plt.imread("./image.png")
 fig, ax = plt.subplots()
 ax.imshow(img, extent=[0, 640, 0, 640])
 
@@ -15,23 +15,25 @@ def circle(R, x0, y0, starst, stop, step):
     return x, y
 
 
-x = np.array([230, 240])
-y = np.array([420, 290])
+# x = np.array([x0, x1]) 
+# y = np.array([y0, y1]) 
 
-coords = circle(35, 180, 210, np.pi/2+np.pi/4, 3*np.pi/2, 0.1)
+# coords = circle(r, x0, y0, start, stop, step)
+# x = np.append(x, coords[0])
+# y = np.append(y, coords[1])
+
+x = np.array([170, 0, 0, 75]) 
+y = np.array([75, 250, 300, 400]) 
+
+coords = circle(50, 75, 450, np.pi*3/2+0.1, 2*np.pi + np.pi/2-0.5, 0.1)
 x = np.append(x, coords[0])
 y = np.append(y, coords[1])
 
-x = np.append(x, [180, 280])
-y = np.append(y,  [175, 220])
+x = np.append(x, 280) 
+y = np.append(y, 550) 
 
-coords = circle(150, 300, 370, np.pi+np.pi/2.15, 2*np.pi-np.pi/6, 0.1)
-x = np.append(x, coords[0])
-y = np.append(y, coords[1])
-
-coords = circle(120, 320, 345, 2*np.pi-np.pi/6, 2*np.pi+np.pi/1.27, 0.1)
-x = np.append(x, coords[0])
-y = np.append(y, coords[1])
+x = np.append(x, 350) 
+y = np.append(y, 620) 
 
 spline_coords, figure_spline_part = interpolate.splprep([x, y], s=0)
 spline_curve = interpolate.splev(figure_spline_part, spline_coords)
